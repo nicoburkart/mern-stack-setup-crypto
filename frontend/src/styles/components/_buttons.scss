@@ -1,0 +1,54 @@
+@import '../abstracts/variables';
+
+$btn-min-width: 150px;
+$padding-left-right: 0.7rem;
+$padding-top-bottom: 1.5rem;
+
+.btn {
+  min-width: $btn-min-width;
+  padding: 0.7rem 1.5rem;
+  box-sizing: content-box;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.primary-btn {
+  @extend .btn;
+  color: $font-color-dark;
+  background: linear-gradient(
+    90deg,
+    $primary-color 27.21%,
+    $secondary-color 95.57%
+  );
+}
+
+.secondary-btn {
+  @extend .btn;
+  min-width: $btn-min-width;
+  background: linear-gradient($background-color, $background-color) padding-box,
+    linear-gradient(to right, $primary-color, $secondary-color) border-box;
+  color: $font-color-dark;
+  padding: calc(#{$padding-left-right} - 3px) calc(#{$padding-top-bottom} - 3px);
+
+  border: 3px solid transparent;
+}
+
+.light-blue-btn {
+  @extend .btn;
+  min-width: $btn-min-width;
+  background: rgba(0, 102, 255, 0.15);
+  color: #0065ff;
+}
+
+.input-btn {
+  position: absolute;
+  cursor: pointer;
+  right: 0.3rem;
+  bottom: 0.5rem;
+  font-size: 1rem;
+  padding: 0.3rem 1.5rem;
+  border-radius: 50px;
+  background: linear-gradient(to right, $primary-color, $secondary-color);
+  font-family: $ff_reg;
+  color: $font-color-light;
+}

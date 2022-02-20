@@ -1,0 +1,36 @@
+@import 'styles/abstracts/variables';
+
+#nav {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: unset;
+  position: fixed;
+  z-index: 10;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+
+  .logo {
+    font-size: 30px;
+    font-family: $ff_bold;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    &::before {
+      content: '';
+      display: block;
+      margin-right: 0.5rem;
+      height: 40px;
+      width: 40px;
+      border-radius: 10px;
+      background: linear-gradient(
+        133.84deg,
+        #{$primary-color} -8.24%,
+        #{$secondary-color} 105.65%
+      );
+    }
+  }
+}

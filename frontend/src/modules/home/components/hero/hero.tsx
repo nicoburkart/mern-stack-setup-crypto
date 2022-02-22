@@ -3,7 +3,9 @@ import './hero.scss';
 const HomeHero = () => {
   return (
     <section id="hero">
-      <h1>hero works</h1>
+      <div className="container">
+        <h1>hero works</h1>
+      </div>
     </section>
   );
 };

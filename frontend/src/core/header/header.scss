@@ -1,16 +1,16 @@
 @import 'styles/abstracts/variables';
 
 #nav {
-  padding-top: 1rem;
-  padding-bottom: 0.5rem;
+  height: $nav-height;
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: unset;
   position: fixed;
   z-index: 10;
-  background-color: transparent;
+  background-color: blue;
   backdrop-filter: blur(20px);
+  box-sizing: border-box;
 
   .logo {
     font-size: 30px;

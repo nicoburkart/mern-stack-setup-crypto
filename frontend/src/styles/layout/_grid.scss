@@ -1,3 +1,4 @@
+@import '../abstracts/variables';
 html,
 body,
 .App,
@@ -8,6 +9,14 @@ body,
 
 body {
   background-color: $background-color;
+}
+
+main {
+  padding-top: $nav-height;
+  position: relative;
+  height: calc(100% - #{$nav-height});
+  max-height: min-content;
+  width: 100%;
 }
 
 .container-padding {
@@ -32,16 +41,16 @@ body {
 // Medium devices (tablets, 768px and up)
 @media (min-width: $md) {
   .container-padding {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 }
 
 // Large devices (desktops, 992px and up)
 @media (min-width: $ld) {
   .container-padding {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 

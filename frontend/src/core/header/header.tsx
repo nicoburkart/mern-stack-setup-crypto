@@ -8,9 +8,20 @@ import {
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { Link } from 'react-router-dom';
 
-function Header() {
+import { connectWallet } from 'core/services/wallet.service';
+
+const Header = () => {
   const account = useAppSelector((state) => state.account);
   const dispatch = useAppDispatch();
+
+  const handleWalletConnect = async () => {
+    const result = await connectWallet();
+    console.log(result);
+    if (!result) {
+      return;
+    }
+    dispatch(setAccountPublicAddress(result));
+  };
 
   return (
     <nav id="nav" className="container">
@@ -19,25 +30,20 @@ function Header() {
       </Link>
       <div className="right-align">
         {account.publicAddress === '' && (
-          <button className="secondary-btn">Connect Wallet</button>
+          <button className="secondary-btn" onClick={handleWalletConnect}>
+            Connect Wallet
+          </button>
         )}
         {account.publicAddress !== '' && (
           <Link to="/profile">
-            <div className="avatar">
-              <img
-                src={
-                  'http://localhost:8080/avatars/' +
-                  account.publicAddress +
-                  '.png'
-                }
-                alt="avatar"
-              />
+            <div className="">
+              <h2>{account.publicAddress}</h2>
             </div>
           </Link>
         )}
       </div>
     </nav>
   );
-}
+};
 
 export default Header;
